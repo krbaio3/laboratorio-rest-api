@@ -1,17 +1,18 @@
 import * as React from 'react';
-import { useHistory } from 'react-router-dom';
-import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader/CardHeader';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import CardActions from '@material-ui/core/CardActions';
-import Typography from '@material-ui/core/Typography';
+import * as classes from './character-card.styles';
+
 import Avatar from '@material-ui/core/Avatar/Avatar';
-import IconButton from '@material-ui/core/IconButton/IconButton';
-import EditIcon from '@material-ui/icons/Edit';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardHeader from '@material-ui/core/CardHeader/CardHeader';
+import CardMedia from '@material-ui/core/CardMedia';
 import DeleteIcon from '@material-ui/icons/Delete';
-import { HotelEntityVm } from '../hotel-collection.vm';
-import * as classes from './hotel-card.styles';
+import EditIcon from '@material-ui/icons/Edit';
+import { HotelEntityVm } from '../character-collection.vm';
+import IconButton from '@material-ui/core/IconButton/IconButton';
+import Typography from '@material-ui/core/Typography';
+import { useHistory } from 'react-router-dom';
 
 interface Props {
   hotel: HotelEntityVm;

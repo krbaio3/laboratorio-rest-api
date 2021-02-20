@@ -1,8 +1,10 @@
+import * as classes from './text-field.styles';
+
+import MuiTextField, { TextFieldProps } from '@material-ui/core/TextField';
+
 import React from 'react';
 import { cx } from 'emotion';
 import { useField } from 'formik';
-import MuiTextField, { TextFieldProps } from '@material-ui/core/TextField';
-import * as classes from './text-field.styles';
 
 export const TextFieldComponent: React.FunctionComponent<TextFieldProps> = (
   props

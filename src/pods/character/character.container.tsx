@@ -1,10 +1,12 @@
-import React from 'react';
-import { useParams, useHistory } from 'react-router-dom';
 import * as api from './api';
-import { createEmptyHotel, Hotel } from './hotel.vm';
-import { mapHotelFromApiToVm, mapHotelFromVmToApi } from './hotel.mappers';
+
+import { Hotel, createEmptyHotel } from './character.vm';
+import { mapHotelFromApiToVm, mapHotelFromVmToApi } from './character.mappers';
+import { useHistory, useParams } from 'react-router-dom';
+
+import { HotelComponent } from './character.component';
 import { Lookup } from 'common/models';
-import { HotelComponent } from './hotel.component';
+import React from 'react';
 
 export const HotelContainer: React.FunctionComponent = (props) => {
   const [hotel, setHotel] = React.useState<Hotel>(createEmptyHotel());
@@ -18,7 +20,7 @@ export const HotelContainer: React.FunctionComponent = (props) => {
   };
 
   const handleLoadHotel = async () => {
-    const apiHotel = await api.getHotel(id);
+    const apiHotel = await api.getCharacter(id);
     setHotel(mapHotelFromApiToVm(apiHotel));
   };
 
@@ -31,7 +33,7 @@ export const HotelContainer: React.FunctionComponent = (props) => {
 
   const handleSave = async (hotel: Hotel) => {
     const apiHotel = mapHotelFromVmToApi(hotel);
-    const success = await api.saveHotel(apiHotel);
+    const success = await api.saveCharacter(apiHotel);
     if (success) {
       history.goBack();
     } else {

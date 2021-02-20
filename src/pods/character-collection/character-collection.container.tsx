@@ -1,9 +1,10 @@
 import * as React from 'react';
-import { useHistory } from 'react-router-dom';
-import { linkRoutes } from 'core/router';
+
+import { HotelCollectionComponent } from './character-collection.component';
 import { deleteHotel } from './api';
-import { useHotelCollection } from './hotel-collection.hook';
-import { HotelCollectionComponent } from './hotel-collection.component';
+import { linkRoutes } from 'core/router';
+import { useHistory } from 'react-router-dom';
+import { useHotelCollection } from './character-collection.hook';
 
 export const HotelCollectionContainer = () => {
   const { hotelCollection, loadHotelCollection } = useHotelCollection();

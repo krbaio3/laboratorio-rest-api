@@ -1,4 +1,4 @@
-export interface Hotel {
+export interface Character {
   id: string;
   type: string;
   name: string;

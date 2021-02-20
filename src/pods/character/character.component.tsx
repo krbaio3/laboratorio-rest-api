@@ -1,15 +1,17 @@
-import React from 'react';
-import { Formik, Form } from 'formik';
+import * as classes from './character.styles';
+
+import { Form, Formik } from 'formik';
 import {
-  TextFieldComponent,
-  SelectComponent,
   RatingComponent,
+  SelectComponent,
+  TextFieldComponent,
 } from 'common/components';
+
 import { Button } from '@material-ui/core';
-import { formValidation } from './hotel.validations';
-import { Hotel } from './hotel.vm';
-import * as classes from './hotel.styles';
+import { Hotel } from './character.vm';
 import { Lookup } from 'common/models';
+import React from 'react';
+import { formValidation } from './character.validations';
 
 interface Props {
   hotel: Hotel;
