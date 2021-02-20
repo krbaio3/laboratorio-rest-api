@@ -2,6 +2,19 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome",
+      "url": "http://localhost:8080",
+      "webRoot": "${workspaceFolder}/src",
+      "sourceMaps": true,
+      "trace": "verbose",
+      "sourceMapPathOverrides": {
+        "webpack:///./*": "${webRoot}/*",
+        "webpack:///../node_modules/*": "${workspaceFolder}/node_modules/*"
+      }
+    },
+    {
       "type": "node",
       "request": "launch",
       "name": "Jest selected file",

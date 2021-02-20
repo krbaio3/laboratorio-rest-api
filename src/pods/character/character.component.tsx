@@ -8,33 +8,35 @@ import {
 } from 'common/components';
 
 import { Button } from '@material-ui/core';
-import { Hotel } from './character.vm';
+import { Character } from './character.vm';
 import { Lookup } from 'common/models';
 import React from 'react';
 import { formValidation } from './character.validations';
 
 interface Props {
-  hotel: Hotel;
+  character: Character;
   cities: Lookup[];
-  onSave: (hotel: Hotel) => void;
+  onSave: (hotel: Character) => void;
 }
 
-export const HotelComponent: React.FunctionComponent<Props> = (props) => {
-  const { hotel, cities, onSave } = props;
+export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
+  const { character, onSave } = props;
 
   return (
     <Formik
       onSubmit={onSave}
-      initialValues={hotel}
+      initialValues={character}
       enableReinitialize={true}
       validate={formValidation.validateForm}
     >
       {() => (
         <Form className={classes.root}>
           <TextFieldComponent name="name" label="Name" />
-          <TextFieldComponent name="address" label="Address" />
-          <RatingComponent name="rating" max={5} />
-          <SelectComponent name="city" label="City" items={cities} />
+          <TextFieldComponent name="species" label="Species" />
+          <TextFieldComponent name="gender" label="Gender" />
+          <TextFieldComponent name="status" label="Status" />
+          {/* <SelectComponent name="city" label="City" items={cities} /> */}
+          <img style={{width: '400px'}} src={character.image} alt={character.name}/>
           <TextFieldComponent
             name="description"
             label="Description"

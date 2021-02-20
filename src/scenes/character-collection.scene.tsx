@@ -1,10 +1,10 @@
 import * as React from 'react';
 
 import { AppLayout } from 'layouts';
-import { HotelCollectionContainer } from 'pods/character-collection';
+import { CharacterCollectionContainer } from 'pods/character-collection';
 
-export const HotelCollectionScene = () => (
+export const CharacterCollectionScene = () => (
   <AppLayout>
-    <HotelCollectionContainer />
+    <CharacterCollectionContainer />
   </AppLayout>
 );

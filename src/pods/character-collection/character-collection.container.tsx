@@ -1,12 +1,12 @@
 import * as React from 'react';
 
-import { HotelCollectionComponent } from './character-collection.component';
+import { CharacterCollectionComponent } from './character-collection.component';
 import { deleteHotel } from './api';
 import { linkRoutes } from 'core/router';
 import { useHistory } from 'react-router-dom';
 import { useHotelCollection } from './character-collection.hook';
 
-export const HotelCollectionContainer = () => {
+export const CharacterCollectionContainer = () => {
   const { hotelCollection, loadHotelCollection } = useHotelCollection();
   const history = useHistory();
 
@@ -27,12 +27,17 @@ export const HotelCollectionContainer = () => {
     loadHotelCollection();
   };
 
+  const handleDetails = async (id: string) => {
+    history.push(linkRoutes.detailCharacter(id));
+  };
+
   return (
-    <HotelCollectionComponent
-      hotelCollection={hotelCollection}
+    <CharacterCollectionComponent
+      characterCollection={hotelCollection}
       onCreateHotel={handleCreateHotel}
       onEdit={handleEdit}
       onDelete={handleDelete}
+      onDetails={handleDetails}
     />
   );
 };
